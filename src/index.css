@@ -1,13 +1,133 @@
-body {
+@charset "UTF-8";
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto";
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+html {
+  overflow: scroll;
+}
+
+body {
+  font-family: "Roboto";
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: -115px;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(26, 26, 26, 0.8)),
+    url("./components/main/assets/fon.png") center/cover no-repeat;
+  backdrop-filter: blur(5px);
+  z-index: -6;
+}
+.neon-circle-green {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 2px solid #04d700;
+  background-color: transparent;
+  box-shadow:
+    0 0 20px #00ff00,
+    0 0 40px #00ff00,
+    0 0 60px #00ff00,
+    0 0 80px #00ff00;
+}
+.neon-circle-red {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 2px solid #d70000;
+  background-color: transparent;
+  box-shadow:
+    0 0 20px #d70000,
+    0 0 40px #d70000,
+    0 0 60px #d70000,
+    0 0 80px #d70000;
+}
+@media (max-width: 610px) {
+  .neon-circle-red,
+  .neon-circle-green {
+    position: relative;
+    top: 1px;
+  }
 }

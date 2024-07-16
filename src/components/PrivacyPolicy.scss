@@ -1,0 +1,72 @@
+.privacy-policy {
+   padding: 20px;
+   color: #ffffff;
+   background-color: #1a1a1a;
+
+   &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+
+      @media (max-width: 768px) {
+         padding: 10px;
+      }
+   }
+
+   &__title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 50px;
+      letter-spacing: 0.05em;
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      &::before {
+         content: "";
+         display: block;
+         width: 50px;
+         height: 2px;
+         background-color: #fff500;
+         position: absolute;
+         bottom: -10px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+      @media (max-width: 610px) {
+         font-size: 20px;
+         line-height: 35px;
+      }
+   }
+
+   &__subtitle {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 10px;
+   }
+
+   & ul {
+      padding-left: 20px;
+
+      @media (max-width: 768px) {
+         padding-left: 10px;
+      }
+   }
+
+   & li {
+      margin-bottom: 10px;
+      list-style: circle;
+   }
+
+   & a {
+      color: #fff500;
+      text-decoration: underline;
+
+      &:hover {
+         color: #ffd700;
+      }
+   }
+}
