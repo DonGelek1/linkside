@@ -7,7 +7,7 @@ const Navbar = () => {
    const links = [
       { name: 'Главная', path: '/' },
       { name: 'О компании', path: '#about' },
-      { name: 'Наши проекты', path: '#projects' },
+      { name: 'Галерея', path: '#projects' },
       { name: 'Услуги', path: '#services' },
       { name: 'Контакты', path: '#social' },
    ];

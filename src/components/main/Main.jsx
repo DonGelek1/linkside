@@ -1,6 +1,7 @@
 import React from 'react';
 import Info from './Info';
 import About from './About';
+import Projects from './Projects';
 import ContactForm from './ContactFrom';
 import Social from './Social';
 import './main.scss'
@@ -22,6 +23,7 @@ const Main = () => {
                </div>
             </section>
             <About />
+            <Projects />
             <ContactForm />
             <Social />
          </div>

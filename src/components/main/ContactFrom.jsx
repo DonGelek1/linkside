@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import MaskedInput from 'react-text-mask';
 import emailjs from 'emailjs-com';
+import error from './assets/error.png';
+import success from './assets/success.gif';
+import loading from './assets/loading.gif';
 
 const ContactForm = () => {
    const [formData, setFormData] = useState({
@@ -8,23 +11,32 @@ const ContactForm = () => {
       phone: ''
    });
 
+   const [status, setStatus] = useState(null);
+
    const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
    };
 
    const handleSubmit = (e) => {
       e.preventDefault();
+      setStatus('loading');
 
-      emailjs.send('service_drbibvw', 'template_3dlkho4', formData, 'm2ZP2KG5VDUTa6EIl')
+      emailjs.send('service_n7idxk4', 'template_8andxa7', formData, 'BvpoNXlt-Mb9QKxCv')
          .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
             setFormData({
                name: '',
                phone: ''
             });
+            setStatus('success');
          }, (err) => {
             console.log('FAILED...', err);
+            setStatus('error');
          });
+   };
+
+   const closeModal = () => {
+      setStatus(null);
    };
 
    return (
@@ -46,6 +58,7 @@ const ContactForm = () => {
             </div>
             <div className="contact-form__input-group">
                <MaskedInput
+                  type='tel'
                   mask={['8', ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
                   placeholder="Введите номер телефона"
                   className="contact-form__input"
@@ -62,13 +75,23 @@ const ContactForm = () => {
          <p className="contact-form__privacy">
             Отправляя данные, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
          </p>
+         {status && (
+            <div className="modal">
+               <div className="modal__content">
+                  {status === 'loading' && <img src={loading} alt="Loading" />}
+                  {status === 'success' && <img src={success} alt="Success" />}
+                  {status === 'error' && (
+                     <div>
+                        <img src={error} alt="Error" />
+                        <p>Что-то пошло не так. Попробуйте снова.</p>
+                     </div>
+                  )}
+                  <button onClick={closeModal} className="modal__close">&times;</button>
+               </div>
+            </div>
+         )}
       </div>
    );
 };
 
 export default ContactForm;
-
-//!! Задачи
-//?? Сделать модальное окно с анимированой загрузкой */
-//?? Решить проблему с smtp сервером */
-//?? Создать красивый шаблон письма */
