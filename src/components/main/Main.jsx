@@ -2,6 +2,7 @@ import React from 'react';
 import Info from './Info';
 import About from './About';
 import Projects from './Projects';
+import Services from './Services';
 import ContactForm from './ContactFrom';
 import Social from './Social';
 import './main.scss'
@@ -24,6 +25,7 @@ const Main = () => {
             </section>
             <About />
             <Projects />
+            <Services />
             <ContactForm />
             <Social />
          </div>

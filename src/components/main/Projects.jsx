@@ -44,7 +44,7 @@ const Projects = () => {
    const renderSlides = (category) => {
       return sliderData[category].map((slide, index) => (
          <div key={index} className={`projects__slide ${selectedImage === slide.src ? 'projects__slide--selected' : ''}`} onClick={() => handleImageClick(slide.src)}>
-            <img src={slide.src} alt={slide.alt} className="projects__image" />
+            <img src={slide.src} alt={slide.alt} loading="lazy" className="projects__image" />
          </div>
       ));
    };
