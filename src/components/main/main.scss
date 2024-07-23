@@ -903,7 +903,7 @@
 }
 .modal {
    position: fixed;
-   z-index: 10;
+   z-index: 6;
    top: 0;
    left: 0;
    width: 100%;
@@ -914,6 +914,9 @@
    align-items: center;
 
    &__content {
+      max-width: 500px;
+      min-width: 300px;
+      height: auto;
       position: relative;
       z-index: 10;
       background: rgb(25, 25, 25);

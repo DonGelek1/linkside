@@ -17,7 +17,7 @@ const Navbar = () => {
          <ul onClick={() => setActive(false)} className={active ? 'header__list active' : 'header__list'}>
             {links.map(link => (
                <li key={link.name}>
-                  <a onClick={e => e.stopPropagation()} className='header__link' href={link.path}>{link.name}</a>
+                  <a className='header__link' href={link.path}>{link.name}</a>
                </li>
             ))}
          </ul>

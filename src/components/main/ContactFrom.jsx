@@ -39,6 +39,12 @@ const ContactForm = () => {
       setStatus(null);
    };
 
+   const handleModalClick = (e) => {
+      if (e.target.classList.contains('modal')) {
+         closeModal();
+      }
+   };
+
    return (
       <div id='order' className="contact-form">
          <h2 className="contact-form__title">
@@ -76,7 +82,7 @@ const ContactForm = () => {
             Отправляя данные, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a>.
          </p>
          {status && (
-            <div className="modal">
+            <div className="modal" onClick={handleModalClick}>
                <div className="modal__content">
                   {status === 'loading' && <img src={loading} alt="Loading" />}
                   {status === 'success' && <img src={success} alt="Success" />}
