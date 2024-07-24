@@ -10,7 +10,7 @@ import wa from './assets/WA.png';
 
 const Social = () => {
    return (
-      <div id='social' className="social">
+      <section id='social' className="social">
          <h2 className="social__title">Социальные сети </h2>
          <div className="social__container">
             <div className="social__card">
@@ -43,7 +43,7 @@ const Social = () => {
                </div>
             </div>
          </div>
-      </div>
+      </section>
    );
 };
 

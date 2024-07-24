@@ -46,7 +46,7 @@ const ContactForm = () => {
    };
 
    return (
-      <div id='order' className="contact-form">
+      <section id='order' className="contact-form">
          <h2 className="contact-form__title">
             Заполните форму - мы свяжемся с вами в рабочее время и обсудим детали проекта.
          </h2>
@@ -96,7 +96,7 @@ const ContactForm = () => {
                </div>
             </div>
          )}
-      </div>
+      </section>
    );
 };
 
